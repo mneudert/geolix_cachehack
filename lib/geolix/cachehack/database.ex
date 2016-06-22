@@ -16,24 +16,18 @@ defmodule Geolix.CacheHack.Database do
 
 
   def lookup(ip) do
-    data = Storage.Data.get(:city)
     meta = Storage.Metadata.get(:city)
     tree = Storage.Tree.get(:city)
 
-    lookup(ip, data, meta, tree, [])
-  end
-
-  defp lookup(_, nil, _, _, _), do: nil
-  defp lookup(_, _, nil, _, _), do: nil
-  defp lookup(_, _, _, nil, _), do: nil
-  defp lookup(ip, data, meta, tree, opts) do
     pointer = parse_lookup_tree(ip, tree, meta)
     result  = case Cache.load(pointer) do
       nil  ->
+        data = Storage.Data.get(:city)
+
         pointer
         |> lookup_pointer(data, meta.node_count)
         |> maybe_include_ip(ip)
-        |> maybe_to_struct(meta.database_type, opts[:as] || :struct, opts)
+        |> maybe_to_struct(meta.database_type, :struct, [])
         |> Cache.store(pointer)
 
       data -> data
