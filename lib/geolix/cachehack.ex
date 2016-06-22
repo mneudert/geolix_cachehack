@@ -6,6 +6,7 @@ defmodule Geolix.CacheHack do
   use Application
 
   alias Geolix.CacheHack.Cache
+  alias Geolix.CacheHack.Database
 
 
   def start(_type, _args) do
@@ -16,4 +17,6 @@ defmodule Geolix.CacheHack do
 
     Supervisor.start_link(children, options)
   end
+
+  defdelegate lookup(ip), to: Database
 end
