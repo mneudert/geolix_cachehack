@@ -1,0 +1,2 @@
+%{"geolix": {:hex, :geolix, "0.10.1", "3a7602862339179455a69f8ed2da3cd3f56e6e9f8010405893e2d9df3a482797", [:mix], [{:poolboy, "~> 1.0", [hex: :poolboy, optional: false]}]},
+  "poolboy": {:hex, :poolboy, "1.5.1", "6b46163901cfd0a1b43d692657ed9d7e599853b3b21b95ae5ae0a777cf9b6ca8", [:rebar], []}}
