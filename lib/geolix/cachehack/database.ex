@@ -9,10 +9,10 @@ defmodule Geolix.CacheHack.Database do
 
   require Logger
 
+  alias Geolix.Adapter.MMDB2.Storage
+  alias Geolix.Adapter.MMDB2.Decoder
   alias Geolix.CacheHack.Cache
-  alias Geolix.Decoder
   alias Geolix.Result
-  alias Geolix.Storage
 
 
   def lookup(ip) do

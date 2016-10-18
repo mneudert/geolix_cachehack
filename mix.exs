@@ -18,6 +18,6 @@ defmodule Geolix.CacheHack.Mixfile do
   end
 
   defp deps do
-    [{ :geolix, "0.10.1" }]
+    [{ :geolix, github: "mneudert/geolix", tag: "1c16367" }]
   end
 end

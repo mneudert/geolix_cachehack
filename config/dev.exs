@@ -6,5 +6,11 @@ path_city =
   |> Path.expand()
 
 config :geolix,
-  databases: [ city: path_city ],
-  pool:      [ size: 5, max_overflow: 10 ]
+  pool:      [ size: 5, max_overflow: 10 ],
+  databases: [
+    %{
+      id:      :city,
+      adapter: Geolix.Adapter.MMDB2,
+      source:  path_city
+    }
+  ]
