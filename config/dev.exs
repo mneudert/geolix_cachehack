@@ -9,8 +9,13 @@ config :geolix,
   pool:      [ size: 5, max_overflow: 10 ],
   databases: [
     %{
-      id:      :city,
+      id:      :default,
       adapter: Geolix.Adapter.MMDB2,
+      source:  path_city
+    },
+    %{
+      id:      :cached,
+      adapter: Geolix.CacheHack.Adapter,
       source:  path_city
     }
   ]
