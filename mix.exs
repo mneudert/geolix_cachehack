@@ -13,8 +13,7 @@ defmodule Geolix.CacheHack.Mixfile do
   end
 
   def application do
-    [ applications: [ :geolix ],
-      mod:          { Geolix.CacheHack, [] } ]
+    [ applications: [ :geolix ]]
   end
 
   defp deps do

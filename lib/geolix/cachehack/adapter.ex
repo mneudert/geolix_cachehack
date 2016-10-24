@@ -9,6 +9,12 @@ defmodule Geolix.CacheHack.Adapter do
   @behaviour Geolix.Adapter
 
 
+  def database_workers() do
+    import Supervisor.Spec
+
+    [ worker(Cache, []) ]
+  end
+
   defdelegate load_database(database), to: MMDB2.Loader
 
   def lookup(ip, opts) do
@@ -17,6 +23,7 @@ defmodule Geolix.CacheHack.Adapter do
       where -> lookup(ip, where, opts)
     end
   end
+
 
   defp lookup(ip, where, opts) do
     meta = MMDB2.Storage.Metadata.get(where)
