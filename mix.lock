@@ -1,2 +1,2 @@
-%{"geolix": {:git, "https://github.com/mneudert/geolix.git", "41d1d5ca9fadef9c270f984cd221e4019d37d5c3", [tag: "41d1d5c"]},
+%{"geolix": {:git, "https://github.com/mneudert/geolix.git", "ad6bf48a5f7ab0ebe629fe5d9c40e3e73a8f281a", [tag: "ad6bf48"]},
   "poolboy": {:hex, :poolboy, "1.5.1", "6b46163901cfd0a1b43d692657ed9d7e599853b3b21b95ae5ae0a777cf9b6ca8", [:rebar], []}}

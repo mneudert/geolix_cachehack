@@ -12,7 +12,7 @@ defmodule Geolix.CacheHack.Adapter do
   def database_workers() do
     import Supervisor.Spec
 
-    [ worker(Cache, []) ]
+    [ worker(Cache, []) | MMDB2.database_workers() ]
   end
 
   defdelegate load_database(database), to: MMDB2
