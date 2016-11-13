@@ -15,7 +15,7 @@ defmodule Geolix.CacheHack.Adapter do
     [ worker(Cache, []) ]
   end
 
-  defdelegate load_database(database), to: MMDB2.Loader
+  defdelegate load_database(database), to: MMDB2
 
   def lookup(ip, opts) do
     case opts[:where] do
